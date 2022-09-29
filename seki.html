@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+            height: 500px;
+        }
+        #kokuban {
+            position: relative;
+            text-align: center;
+            top: 8px;
+            font-size: 40px;
+        }
+    </style>
+    <script>
+        function arrayShuffle(array) {
+            for(var i = (array.length - 1); 0 < i; i--){
+
+                // 0〜(i+1)の範囲で値を取得
+                var r = Math.floor(Math.random() * (i + 1));
+
+                // 要素の並び替えを実行
+                var tmp = array[i];
+                array[i] = array[r];
+                array[r] = tmp;
+            }
+            return array;
+        }
+
+
+        function change() {
+            array = [];
+            for (let i=1; i<=32; i++) {
+                array.push(i);
+            }
+            console.log(arrayShuffle(array));
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Ler's 席替え" onclick="change()">
+    <br>
+    <h1 id="kokuban">黒板</h1>
+    <br>
+    <table border="1.5">
+        <tr>
+            <td id=""></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+    </table>
+</body>
+</html>
